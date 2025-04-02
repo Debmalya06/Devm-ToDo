@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Dev Hub</title>
+    <link rel="stylesheet" href="output.css">
+
+<style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+        .clip-path-circle {
+            clip-path: circle(50% at 50% 50%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-[#0F172A] via-[#1E293B] to-[#0F172A] min-h-screen overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-opacity-90 bg-[#0F172A] backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg rotate-45"></div>
+                    <span class="text-white text-xl font-bold">Devm</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Features</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                </div>
+                <a href="/loginpage" class="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-medium hover:opacity-90 transition-opacity">
+                    Login
+                </a>
+        
+
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="relative pt-32 pb-20 px-6">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Floating Orbs -->
+            <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-30 animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-40 h-40 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full blur-xl opacity-30 animate-float" style="animation-delay: -2s"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-24 h-24 bg-gradient-to-r from-green-500 to-teal-500 rounded-full blur-xl opacity-30 animate-float" style="animation-delay: -4s"></div>
+            
+            <!-- Grid Pattern -->
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDBNIDAgMjAgTCA0MCAyMCBNIDIwIDAgTCAyMCA0MCBNIDAgMzAgTCA0MCAzMCBNIDMwIDAgTCAzMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkQzNzQ4IiBvcGFjaXR5PSIwLjIiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto relative">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h1 class="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 mb-8 p-2.5">
+                    Devm ToDo: Master Your Day with Ease!
+                </h1>
+                <p class="text-xl text-gray-300 mb-12">
+                    Conquer your day, one task at a time—your life, organized and unstoppable!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/loginpage" class="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-medium hover:opacity-90 transition-opacity transform hover:scale-105 duration-200">
+                        Explore Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Card 1 -->
+                <div class="group relative bg-white bg-opacity-5 backdrop-blur-lg rounded-2xl p-6 hover:bg-opacity-10 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                    <div class="relative">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg mb-4 transform group-hover:rotate-45 transition-transform duration-300"></div>
+                        <h3 class="text-xl font-semibold text-white mb-2">User Friendly User Interface</h3>
+                        <p class="text-gray-400">Our website is designed to be user-friendly and easy to navigate. With clear language and simple navigation, you'll find what you need quickly and effortlessly.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative bg-white bg-opacity-5 backdrop-blur-lg rounded-2xl p-6 hover:bg-opacity-10 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                    <div class="relative">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg mb-4 transform group-hover:rotate-45 transition-transform duration-300"></div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Manage Your Task</h3>
+                        <p class="text-gray-400">Stay organized with our Todo app! Add tasks, set deadlines, and collaborate with others to boost productivity.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative bg-white bg-opacity-5 backdrop-blur-lg rounded-2xl p-6 hover:bg-opacity-10 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                    <div class="relative">
+                        <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg mb-4 transform group-hover:rotate-45 transition-transform duration-300"></div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Email Notification</h3>
+                        <p class="text-gray-400">Never miss a deadline! Our email notification feature sends reminders when tasks are incomplete, ensuring you stay on track and meet your goals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-white">100K+</div>
+                    <div class="text-gray-400">Active Users</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-white">50M+</div>
+                    <div class="text-gray-400">Lines of Code</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-white">99.9%</div>
+                    <div class="text-gray-400">Uptime</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-white">24/7</div>
+                    <div class="text-gray-400">Support</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

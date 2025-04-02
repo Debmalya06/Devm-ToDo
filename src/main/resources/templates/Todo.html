@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devm Todo</title>
+    <link rel="stylesheet" href="styles_2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <h1>Devm Todo</h1>
+        </div>
+        <div class="user-info">
+            <span class="username" th:text="${session.user != null ? session.user.name : 'Guest'}"></span>
+            <form th:action="@{/logout}" method="get">
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="dashboard">
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>Total Tasks</h3>
+                        <p id="total-tasks" th:text="${tasks.size()}">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Completed</h3>
+                        <p id="completed-tasks" th:text="${tasks.?[completed].size()}">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending</h3>
+                        <p id="pending-tasks" th:text="${tasks.?[!completed].size()}">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Your Tasks</h2>
+            
+            <form th:action="@{/addTask}" method="post" class="task-form">
+                <div class="input-group">
+                    <input type="text" name="description" id="task-input" placeholder="What needs to be done?" required>
+                    <button type="submit" id="add-task-btn">Add Task</button>
+                </div>
+            </form>
+
+            <div class="task-list" id="task-list">
+                <div class="task-item" th:each="task : ${tasks}" th:classappend="${task.completed ? 'completed' : ''}">
+                    <div class="task-header">
+                        <div class="task-title" th:text="${task.description}"></div>
+                    </div>
+                    <div class="task-actions">
+                        <form th:action="@{'/toggleTask/' + ${task.id}}" method="post">
+                            <button type="submit" class="task-btn complete-btn">
+                                <i class="fas" th:classappend="${task.completed ? 'fa-undo' : 'fa-check'}"></i>
+                                <span th:text="${task.completed ? 'Undo' : 'Complete'}"></span>
+                            </button>
+                        </form>
+                        <form th:action="@{'/deleteTask/' + ${task.id}}" method="post">
+                            <button type="submit" class="task-btn delete-btn">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </form>
+                        <form th:action="@{'/notifyTask/' + ${task.id}}" method="post">
+                            <button type="submit" class="task-btn notify-btn" th:disabled="${task.notified}">
+                                <i class="fas fa-bell"></i>
+                                <span th:text="${task.notified ? 'Notified' : 'Notify'}"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
