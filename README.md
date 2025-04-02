@@ -7,7 +7,6 @@ Devm Todo is a task management system built with **Spring Boot & Thymeleaf** tha
 ## Features
 
 - ✅ **Task Management**: Add, edit, delete, and mark tasks as completed.
-- 🔄 **Natural Language Task Input**: Users can add tasks informally, and the system will correct & format them.
 - 📩 **Email Notifications**: Get notified about pending tasks.
 - 🔐 **U**ser Authentication: Secure login/logout functionality.
 
@@ -15,7 +14,6 @@ Devm Todo is a task management system built with **Spring Boot & Thymeleaf** tha
 
 - **Backend**: Spring Boot, Spring Security, MySQL
 - **Frontend**: Thymeleaf, Bootstrap, JavaScript
-- **AI Integration**: Google Gemini API
 
 ## Installation Guide
 
@@ -35,7 +33,7 @@ Ensure you have the following installed:
    git clone https://github.com/yourusername/devm-todo.git
    cd devm-todo
    ```
-
+   
 2. **Set Up MySQL Database**:
 
    - Create a database named `todo_db`.
@@ -46,22 +44,16 @@ Ensure you have the following installed:
      spring.datasource.password=yourpassword
      ```
 
-3. **Set Up Gemini API Key**:
 
-   - Obtain an API key from Google AI.
-   - Add it to `application.properties`:
-     ```properties
-     gemini.api.key=your_gemini_api_key
-     ```
 
-4. **Run the Application**:
+3. **Run the Application**:
 
    ```sh
    mvn spring-boot:run
    ```
 
 5. **Access the Application**:
-   Open `http://localhost:8080` in your browser.
+   Open `http://localhost:8081` in your browser.
 
 ## Gemini AI Integration
 
