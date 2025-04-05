@@ -1,4 +1,4 @@
-# Devm Todo - AI-Powered Task Manager
+# Devm Todo - Task Manager
 
 ## Overview
 
