@@ -12,8 +12,8 @@ Devm Todo is a task management system built with **Spring Boot & Thymeleaf** tha
 
 ## Tech Stack
 
-- **Backend**: Spring Boot, Spring Security, MySQL
-- **Frontend**: Thymeleaf, Bootstrap, JavaScript
+- **Backend**: Spring Boot, MySQL
+- **Frontend**: Thymeleaf, Tailwind, JavaScript
 
 ## Installation Guide
 
